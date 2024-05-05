@@ -13,3 +13,26 @@ export function capitalizeFirstWord(str) {
     }
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
+
+export const styleObj = {
+    inputLabel: {
+        fontSize: "13px",
+        color: "rgb(128, 128, 128)",
+    },
+    selectDropdown: {
+        fontSize: "13px",
+        color: "rgb(128, 128, 128)",
+        textAlign: "left",
+    },
+    jobCardActionButton: {
+        width: "100%",
+        color: "black",
+        borderRadius: "8px",
+        backgroundColor: "rgb(85, 239, 196)",
+        padding: "8px 18px",
+        marginBottom: "1rem",
+        border: "none",
+        fontWeight: "600",
+        textTransform: "none",
+    }
+};

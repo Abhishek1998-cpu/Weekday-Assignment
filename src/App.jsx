@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
 import axios from "axios";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import JobCard from "./components/JobCard";
-import Filter from "./components/Filter";
+import JobCard from "./components/JobCard/JobCard";
+import Filter from "./components/Filter/Filter";
 import CircularProgress from "@mui/material/CircularProgress";
+import "./App.css";
 
 function App() {
   const [resData, setResData] = useState({});
@@ -50,7 +48,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("Hello World ", limit);
     fetchData();
   }, [limit]);
 
@@ -73,14 +70,12 @@ function App() {
   }, [searchString]);
 
   useEffect(() => {
-    console.log(experience);
     if (experience === "" || experience === 0) {
       setJobsData(resData);
     } else {
       const filteredData = resData?.jdList?.filter((item) => {
         return item?.minExp <= experience;
       });
-      console.log("FilterData => ", filteredData);
       if (filteredData) {
         setJobsData({
           jdList: [...filteredData],
@@ -91,14 +86,12 @@ function App() {
   }, [experience]);
 
   useEffect(() => {
-    console.log("Min => ", minBasePay);
     if (minBasePay === "" || minBasePay === 0) {
       setJobsData(resData);
     } else {
       const filteredData = resData?.jdList?.filter((item) => {
         return item?.minJdSalary >= minBasePay;
       });
-      console.log("FilterData => ", filteredData);
       if (filteredData) {
         setJobsData({
           jdList: [...filteredData],
@@ -109,7 +102,6 @@ function App() {
   }, [minBasePay]);
 
   useEffect(() => {
-    console.log(location);
     if (location === "both") {
       setJobsData(resData);
     } else {
@@ -120,7 +112,6 @@ function App() {
           return !item?.location?.toLowerCase()?.includes("remote");
         }
       });
-      console.log("FilterData => ", filteredData);
       if (filteredData) {
         setJobsData({
           jdList: [...filteredData],
@@ -131,11 +122,8 @@ function App() {
   }, [location]);
 
   const loadMoreData = (entries) => {
-    console.log("Loading ", loading);
     const target = entries[0];
     if (target.isIntersecting && !loading) {
-      // fetchData(page);
-      console.log("Load More Data Called");
       setLimit((prevState) => prevState + 10);
     }
   };
@@ -162,7 +150,7 @@ function App() {
             setLocationFilter={setLocation}
           />
         </div>
-        <div className="joblist-card-container">
+        <div className="job-list-card-container">
           {jobsData?.jdList?.map((ele, index) => {
             return (
               <JobCard

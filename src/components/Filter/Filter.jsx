@@ -1,8 +1,8 @@
 import React from "react";
-import SearchInputField from "./SearchInputField";
-import ExperienceDropdown from "./ExperienceDropdown";
-import MinBasePayDropdown from "./MinBasePayDropdown";
-import LocationDropdown from "./LocationDropdown";
+import SearchInputField from "../SearchInputField";
+import ExperienceDropdown from "../ExperienceDropdown/ExperienceDropdown";
+import MinBasePayDropdown from "../MinBasePayDropdown/MinBasePayDropdown";
+import LocationDropdown from "../LocationDropdown/LocationDropdown";
 import "./Filter.css";
 
 const Filter = ({

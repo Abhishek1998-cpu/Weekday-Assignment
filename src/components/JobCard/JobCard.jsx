@@ -4,7 +4,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import { showDescription, capitalizeFirstWord } from "../utils";
+import { showDescription, capitalizeFirstWord, styleObj } from "../../utils";
 import "./JobCard.css";
 
 const JobCard = ({ jobData }) => {
@@ -65,20 +65,9 @@ const JobCard = ({ jobData }) => {
       >
         <Button
           size="small"
-          className="action-button"
           variant="outlined"
           disableRipple
-          sx={{
-            width: "100%",
-            color: "black",
-            borderRadius: "8px",
-            backgroundColor: "rgb(85, 239, 196)",
-            padding: "8px 18px",
-            marginBottom: "1rem",
-            border: "none",
-            fontWeight: "600",
-            textTransform: "none",
-          }}
+          sx={styleObj?.jobCardActionButton}
         >
           Easy Apply
         </Button>

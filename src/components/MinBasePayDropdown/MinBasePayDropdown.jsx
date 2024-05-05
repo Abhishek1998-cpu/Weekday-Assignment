@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import "./MinBasePayDropdown.css";
+import { styleObj } from "../../utils";
 
 const MinBasePayDropdown = ({ setMinBasePayFilter }) => {
   const [minBasePay, setMinBasePay] = React.useState("");
@@ -24,7 +22,7 @@ const MinBasePayDropdown = ({ setMinBasePayFilter }) => {
         <InputLabel
           id="experience-dropdown-label"
           size="small"
-          sx={{ fontSize: "13px", color: "rgb(128, 128, 128)" }}
+          sx={styleObj?.inputLabel}
         >
           Min Base Pay
         </InputLabel>
@@ -35,14 +33,10 @@ const MinBasePayDropdown = ({ setMinBasePayFilter }) => {
           label="Min Base Pay"
           onChange={handleChange}
           size="small"
-          sx={{
-            fontSize: "13px",
-            color: "rgb(128, 128, 128)",
-            textAlign: "left",
-          }}
+          sx={styleObj?.selectDropdown}
         >
-          {minBasePayArray?.map((ele, index) => {
-            return <MenuItem value={ele}>{ele}L</MenuItem>;
+          {minBasePayArray?.map((ele) => {
+            return <MenuItem value={ele}>{`${ele} LPA`}</MenuItem>;
           })}
         </Select>
       </FormControl>

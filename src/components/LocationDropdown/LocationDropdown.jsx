@@ -1,9 +1,7 @@
 import React, { useEffect } from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
 import "./LocationDropdown.css";
+import { styleObj } from "../../utils";
 
 const LocationDropdown = ({ setLocationFilter }) => {
   const [location, setLocation] = React.useState("");
@@ -21,7 +19,7 @@ const LocationDropdown = ({ setLocationFilter }) => {
         <InputLabel
           size="small"
           id="experience-dropdown-label"
-          sx={{ fontSize: "13px", color: "rgb(128, 128, 128)" }}
+          sx={styleObj?.inputLabel}
         >
           Location
         </InputLabel>
@@ -31,11 +29,7 @@ const LocationDropdown = ({ setLocationFilter }) => {
           value={location}
           label="Location"
           onChange={handleChange}
-          sx={{
-            fontSize: "13px",
-            color: "rgb(128, 128, 128)",
-            textAlign: "left",
-          }}
+          sx={styleObj?.selectDropdown}
           size="small"
         >
           <MenuItem value={"remote"}>Remote</MenuItem>;

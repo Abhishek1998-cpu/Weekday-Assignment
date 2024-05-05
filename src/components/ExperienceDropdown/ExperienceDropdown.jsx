@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
-import MenuItem from "@mui/material/MenuItem";
-import Select from "@mui/material/Select";
-import Button from "@mui/material/Button";
-import InputLabel from "@mui/material/InputLabel";
-import FormControl from "@mui/material/FormControl";
+import { Select, MenuItem, InputLabel, FormControl } from "@mui/material";
+import { styleObj } from "../../utils";
 import "./ExperienceDropdown.css";
 
 const ExperienceDropdown = ({ setExperienceFilter }) => {
@@ -25,7 +22,7 @@ const ExperienceDropdown = ({ setExperienceFilter }) => {
         <InputLabel
           size="small"
           id="experience-dropdown-label"
-          sx={{ fontSize: "13px", color: "rgb(128, 128, 128)" }}
+          sx={styleObj?.inputLabel}
         >
           Experience
         </InputLabel>
@@ -35,14 +32,10 @@ const ExperienceDropdown = ({ setExperienceFilter }) => {
           value={experience}
           label="Experience"
           onChange={handleChange}
-          sx={{
-            fontSize: "13px",
-            color: "rgb(128, 128, 128)",
-            textAlign: "left",
-          }}
+          sx={styleObj?.selectDropdown}
           size="small"
         >
-          {experienceArray?.map((ele, index) => {
+          {experienceArray?.map((ele) => {
             return <MenuItem value={ele}>{ele}</MenuItem>;
           })}
         </Select>
