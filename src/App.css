@@ -1,8 +1,31 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+#load-more {
+  height: 10px;
+  background: transparent;
+}
+
+.joblist-card-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); 3 equal columns */
+  grid-template-rows: repeat(3, 1fr); /* 3 rows each with a height of 100px */
+  gap: 2rem; /* gap between grid items */
+
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* gap: 4rem; */
+}
+
+.filter-wrapper {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .logo {
@@ -11,12 +34,12 @@
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+/* .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
+} */
 
 @keyframes logo-spin {
   from {
