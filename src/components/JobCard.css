@@ -1,0 +1,122 @@
+.action-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* width: 100%; */
+}
+
+.company-logo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: #8b8b8b;
+}
+
+.job-role {
+  font-size: 14px;
+}
+
+.company-logo {
+  height: 40px;
+  width: 40px;
+}
+
+.first-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.company-details-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 9px;
+}
+
+.card-style {
+  min-width: 275;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px 0px !important;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card-style:hover {
+  transform: scale(1.02);
+}
+
+/* .action-button {
+  width: 100%;
+  color: black;
+  border-radius: 8px;
+  background-color: rgb(85, 239, 196);
+  padding: 8px 18px;
+  margin-bottom: 1rem;
+  border: none;
+  font-weight: 600;
+  text-transform: none;
+} */
+
+.job-location {
+  margin-left: 48px;
+  display: flex;
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.job-description {
+  text-align: left;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.job-description-title {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.estimated-salary {
+  color: rgb(77, 89, 106);
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.min-experience-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  gap: 2px;
+}
+
+.min-experience-text {
+  color: #8b8b8b;
+  font-size: 13px;
+}
+
+.min-experience {
+  font-size: 14px;
+}
+
+.job-description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
